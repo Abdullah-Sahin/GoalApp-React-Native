@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Button, StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import CustomButton from "./zzcomonents/CustomButton";
 import InputContainer from "./zzcomonents/InputContainer";
 import SingleGoalContainer from "./zzcomonents/SingleGoalContainer";
@@ -27,41 +27,42 @@ export default function App() {
   };
 
   return (
-    <View style={styles.appContainer}>
-      {/* <Button color="#c1f527" title="Click to add goal" onPress={setModalVisible} /> */}
-
-      <InputContainer
-        visible={modalVisibility}
-        addGoalHandler={addGoalHandler}
-        onCancel={setModalInvisible}
-      />
-
-      <View style={styles.goalsContainer}>
-        <FlatList
-          data={goals}
-          keyExtractor={(item, index) => {
-            return item.id;
-          }}
-          renderItem={(itemData) => {
-            return (
-              <SingleGoalContainer
-                goalText={itemData.index + 1 + ". " + itemData.item.text}
-                deleteGoalHandler={deleteGoalHandler}
-                id={itemData.item.id}
-              ></SingleGoalContainer>
-            );
-          }}
+    <>
+      <StatusBar style="light" />
+      <View style={styles.appContainer}>
+        <InputContainer
+          visible={modalVisibility}
+          addGoalHandler={addGoalHandler}
+          onCancel={setModalInvisible}
         />
+
+        <View style={styles.goalsContainer}>
+          <FlatList
+            data={goals}
+            keyExtractor={(item, index) => {
+              return item.id;
+            }}
+            renderItem={(itemData) => {
+              return (
+                <SingleGoalContainer
+                  goalText={itemData.index + 1 + ". " + itemData.item.text}
+                  deleteGoalHandler={deleteGoalHandler}
+                  id={itemData.item.id}
+                ></SingleGoalContainer>
+              );
+            }}
+          />
+        </View>
+        <View style={styles.button}>
+          <CustomButton
+            bg="#e31baa"
+            color="white"
+            text="Yeni Görev Ekle"
+            onPress={setModalVisible}
+          />
+        </View>
       </View>
-      <View style={styles.button}>
-        <CustomButton
-          bg="#3fa14c"
-          color="white"
-          text="Add Goal"
-          onPress={setModalVisible}
-        />
-      </View>
-    </View>
+    </>
   );
 }
 

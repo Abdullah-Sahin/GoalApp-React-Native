@@ -27,8 +27,8 @@ function InputContainer(props) {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.textInput}
-          placeholder="Add new goal!!!"
-          placeholderTextColor="#c3c5c7"
+          placeholder="Yeni Görevim..."
+          placeholderTextColor="#f5bae4"
           onChangeText={enteredTextHandler}
           value={enteredText}
         />
@@ -37,15 +37,15 @@ function InputContainer(props) {
             <CustomButton
               bg="#f52e27"
               color="white"
-              text="Cancel"
+              text="İPTAL"
               onPress={onCancel}
             />
           </View>
           <View style={styles.singleButtonContainer}>
             <CustomButton
-              bg="#32fa3c"
+              bg="#e31baa"
               color="white"
-              text="Add Goal"
+              text="EKLE"
               onPress={addGoalHandler}
             />
           </View>
@@ -60,11 +60,14 @@ const styles = StyleSheet.create({
     flex: 3,
     justifyContent: "center",
     padding: 10,
+    backgroundColor: "#780c59"
   },
   textInput: {
     width: "90%",
-    borderWidth: 1,
+    borderWidth: 0.3,
     borderRadius: 10,
+    borderColor: "#f7e9f3",
+    color: "#f7e9f3",
     marginBottom: 10,
     padding: 8,
     height: 50,

@@ -18,15 +18,17 @@ function SingleGoalContainer(props) {
 const styles = StyleSheet.create({
   singleGoalContainer: {
     marginBottom: 10,
-    borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: 12,
+    backgroundColor: "#e31baa",
+    opacity: 0.9,
     justifyContent: "center",
     height: 50,
   },
   singleGoalText: {
     padding: 4,
     height: "95%",
-    textAlignVertical: "center"
+    textAlignVertical: "center",
+    color: "#ffccfc"
   },
   whenPressed: {
     opacity: "40%"
