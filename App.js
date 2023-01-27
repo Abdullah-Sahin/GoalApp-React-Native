@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Image } from "react-native";
 import CustomButton from "./zzcomonents/CustomButton";
 import InputContainer from "./zzcomonents/InputContainer";
 import SingleGoalContainer from "./zzcomonents/SingleGoalContainer";
@@ -30,6 +30,7 @@ export default function App() {
     <>
       <StatusBar style="light" />
       <View style={styles.appContainer}>
+        <Image source={require("./assets/images/başarı.jpeg")} style={styles.image} />
         <InputContainer
           visible={modalVisibility}
           addGoalHandler={addGoalHandler}
@@ -80,4 +81,9 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     marginHorizontal: 5,
   },
+  image: {
+    width: "94%",
+    height: "20%",
+    alignSelf: "center",
+  }
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { StyleSheet, View, TextInput, Modal } from "react-native";
+import { StyleSheet, View, TextInput, Modal, Image } from "react-native";
 import CustomButton from "./CustomButton";
 
 function InputContainer(props) {
@@ -25,6 +25,10 @@ function InputContainer(props) {
   return (
     <Modal visible={props.visible} animationType="fade">
       <View style={styles.inputContainer}>
+        <Image
+          source={require("../assets/images/hedef.jpg")}
+          style={styles.image}
+        />
         <TextInput
           style={styles.textInput}
           placeholder="Yeni Görevim..."
@@ -57,10 +61,10 @@ function InputContainer(props) {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    flex: 3,
+    flex: 1,
     justifyContent: "center",
     padding: 10,
-    backgroundColor: "#780c59"
+    backgroundColor: "#780c59",
   },
   textInput: {
     width: "90%",
@@ -71,7 +75,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     padding: 8,
     height: 50,
-    alignSelf: "center"
+    alignSelf: "center",
   },
   buttonsContainer: {
     flexDirection: "row",
@@ -81,6 +85,13 @@ const styles = StyleSheet.create({
     width: "40%",
     marginTop: 5,
     marginHorizontal: 5,
+  },
+  image: {
+    alignSelf: "center",
+    marginHorizontal: 10,
+    marginBottom: 60,
+    width: "90%",
+    height: "30%"
   },
 });
 
